@@ -1,0 +1,48 @@
+//
+// Badges
+// --------------------------------------------------
+
+
+// Set unique padding and border-radii
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  .border-radius(9px);
+}
+
+// Empty labels/badges collapse
+.badge {
+  &:empty {
+    display: none;
+  }
+}
+
+// Hover/focus state, but only for links
+a {
+  &.badge:hover,
+  &.badge:focus {
+    color: @white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// Colors
+// Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+.badge {
+  // Important (red)
+  &-important         { background-color: @label-danger-bg; }
+  &-important[href]   { background-color: darken(@label-danger-bg, 10%); }
+  // Warnings (orange)
+  &-warning           { background-color: @label-warning-bg; }
+  &-warning[href]     { background-color: darken(@label-warning-bg, 10%); }
+  // Success (green)
+  &-success           { background-color: @label-success-bg; }
+  &-success[href]     { background-color: darken(@label-success-bg, 10%); }
+  // Info (turquoise)
+  &-info              { background-color: @label-info-bg; }
+  &-info[href]        { background-color: darken(@label-info-bg, 10%); }
+  // Inverse (black)
+  &-inverse           { background-color: @label-inverse-bg; }
+  &-inverse[href]     { background-color: darken(@label-inverse-bg, 10%); }
+}

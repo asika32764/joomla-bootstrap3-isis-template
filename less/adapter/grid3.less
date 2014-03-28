@@ -1,0 +1,128 @@
+//
+// Grid system
+// --------------------------------------------------
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  .container-fixed();
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  .container-fixed();
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  .make-row();
+}
+.row-fluid {
+  .make-row();
+}
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`.
+
+.make-grid-columns2() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  (@grid-gutter-width / 2);
+      padding-right: (@grid-gutter-width / 2);
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.float-grid-columns2(@class) {
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".@{class}@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general
+    @item: ~".@{class}@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.calc-grid-column2(@index, @class, @type) when (@type = offset) {
+  .offset@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.loop-grid-columns2(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column2(@index, @class, @type);
+  // next iteration
+  .loop-grid-columns2((@index - 1), @class, @type);
+}
+
+.calc-grid-column2(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .@{class}@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+
+// Create grid for specific class
+.make-grid2(@class) {
+  .float-grid-columns2(@class);
+  .loop-grid-columns2(@grid-columns, @class, width);
+//  .loop-grid-columns2(@grid-columns, @class, pull);
+//  .loop-grid-columns2(@grid-columns, @class, push);
+  .loop-grid-columns2(@grid-columns, @class, offset);
+}
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: @screen-md-min) {
+  .make-grid2(span);
+}
+
+[class*="span"] {
+  min-height: 1px; // prevent collapsing columns
+}
