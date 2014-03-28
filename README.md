@@ -6,7 +6,7 @@ This template support both Bootstrap 2 & 3 syntax, by including the [Bootstrap 3
 
 ## Installation
 
-Download package and install it in Joomla admin.
+[Download](https://github.com/asika32764/joomla-bootstrap3-isis-template/archive/master.zip) package and install it in Joomla admin.
 
 ## Development
 
