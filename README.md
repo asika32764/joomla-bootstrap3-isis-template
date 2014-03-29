@@ -1,4 +1,4 @@
-# Joomla Isis template for Bootstrap 3
+# Joomla Isis template for Bootstrap 3   [![Analytics](https://ga-beacon.appspot.com/UA-48372917-1/joomla-bootstrap3-isis-template/readme)](https://github.com/igrigorik/ga-beacon)
 
 This is Joomla!3 isis template but using Bootstrap 3 styles.
 
