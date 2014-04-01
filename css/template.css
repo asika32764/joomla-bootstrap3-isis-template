@@ -9182,7 +9182,7 @@ ol.inline > li {
   .controls-row [class*="span"] + [class*="span"] {
     margin-left: 0;
   }
-  .modal {
+  .modal.hide {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -9190,10 +9190,10 @@ ol.inline > li {
     width: auto;
     margin: 0;
   }
-  .modal.fade {
+  .modal.hide.fade {
     top: -100px;
   }
-  .modal.fade.in {
+  .modal.hide.fade.in {
     top: 20px;
   }
 }
@@ -9235,7 +9235,7 @@ ol.inline > li {
     margin-right: 0;
     margin-left: 0;
   }
-  .modal {
+  .modal.hide {
     top: 10px;
     left: 10px;
     right: 10px;
@@ -12273,13 +12273,14 @@ a.thumbnail:focus {
 .modal-open {
   overflow: hidden;
 }
-div.modal {
-  display: none;
+div.modal.hide {
+  display: block;
   overflow: auto;
   overflow-y: scroll;
   position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
   z-index: 1050;
   -webkit-overflow-scrolling: touch;
@@ -12304,14 +12305,19 @@ div.modal.in {
   transform: translate(0, 0);
 }
 div.modal.hide {
-  display: fixed !important;
+  display: block !important;
+  visibility: hidden;
+  position: fixed;
 }
-div.modal {
+div.modal.hide.in {
+  visibility: visible;
+}
+div.modal.hide {
   position: relative;
   width: auto;
   margin: 10px;
 }
-div.modal {
+div.modal.hide {
   position: relative;
   background-color: #ffffff;
   border: 1px solid #999999;
@@ -12375,11 +12381,11 @@ div.modal {
   margin-left: 0;
 }
 @media (min-width: 768px) {
-  div.modal {
+  div.modal.hide {
     width: 600px;
     margin: 30px auto;
   }
-  div.modal {
+  div.modal.hide {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -14624,7 +14630,7 @@ input.modal {
   line-height: 32px;
 }
 .chzn-container-single .chzn-single div b {
-  background-position: 0px 7px;
+  background-position: 0px 5px;
 }
 .chzn-container .chzn-results li.highlighted {
   background-image: none;
@@ -14888,6 +14894,18 @@ fieldset[disabled] .chzn-color-state.chzn-single[rel="value_-2"].active {
 .navbar-inverse .nav > .disabled a:hover,
 .navbar-inverse .nav > .disabled a:focus {
   color: #d9d9d9;
+}
+#status {
+  padding-top: 6px;
+}
+#status p {
+  margin: 0;
+}
+#status .btn-toolbar {
+  margin: 0;
+}
+div.modal.hide {
+  bottom: auto;
 }
 .com_login .navbar {
   background: transparent;
