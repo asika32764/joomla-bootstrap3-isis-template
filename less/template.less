@@ -1044,6 +1044,10 @@ a.modal, button.modal, input.modal {
 	border-color: @btn-default-border;
 }
 
+.chzn-container-active .chzn-drop {
+  box-sizing: content-box;
+}
+
 .chzn-container-active.chzn-with-drop .chzn-single {
 	background: #fff;
 
@@ -1068,6 +1072,12 @@ a.modal, button.modal, input.modal {
 
 .chzn-container-single .chzn-single abbr {
 	top: 10px;
+}
+
+.chzn-container .chzn-search input {
+  // box-sizing: initial;
+  width: 100%;
+  height: 26px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
