@@ -15131,6 +15131,9 @@ textarea.noResize {
 .btn-group > .btn {
   float: none;
 }
+.btn-group > label.btn {
+  float: left;
+}
 .btn-group > .btn + .btn {
   margin-left: -5px;
 }
