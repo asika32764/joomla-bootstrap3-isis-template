@@ -2,7 +2,7 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.4" type="template" client="administrator" method="upgrade">
 	<name>isis3</name>
-	<version>1.0</version>
+	<version>3.4.0</version>
 	<creationDate>3/28/2014</creationDate>
 	<author>Simon Asika</author>
 	<authorEmail>asika32764@gmail.com</authorEmail>
