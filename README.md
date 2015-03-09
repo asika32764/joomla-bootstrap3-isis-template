@@ -18,7 +18,7 @@ If you want to change some less code, please install [NodeJS less](https://www.n
 $ npm install -g less
 ```
 
-Then cd to `{JOOMLA}/administrator/template/isis3/cli` and run:
+Then cd to `{JOOMLA}/administrator/template/isis3/less` and run:
 
 ```
 $ lessc template.less ../css/template.css
