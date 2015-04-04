@@ -39,10 +39,6 @@
 		<position>login</position>
 		<position>debug</position>
 	</positions>
-	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.tpl_isis.ini</language>
-		<language tag="en-GB">en-GB/en-GB.tpl_isis.sys.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">
