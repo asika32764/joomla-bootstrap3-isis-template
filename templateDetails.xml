@@ -14,6 +14,7 @@
 		<filename>favicon.ico</filename>
 		<filename>index.php</filename>
 		<filename>login.php</filename>
+		<filename>error.php</filename>
 		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
